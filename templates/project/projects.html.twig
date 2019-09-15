@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Usako - Les projets{% endblock %}
+
+{% block body %}
+    <main>
+        <h1>Projets réalisés</h1>
+
+        <figure class="d-md-flex justify-content-center p-3 flex-wrap">
+            {% for project in projects %}
+                {% if project.status == 1 %}
+
+                    <figure class="w-50 p-3 mx-auto text-center">
+                        <img src="{{ asset('uploads/images/' ~ project.image) }}" class="w-75 h-img-project" alt="image du projet {{ project.id }}">
+                        <figcaption>
+                            {{ project.title }}<br>
+
+                            <a href="{{ path('project', {'id': project.id}) }}">Plus d'informations</a>
+                            <br>
+                            <a href="{{ path('postlike', {'id': project.id}) }}" class="btn btn-link js-like">
+                                {% if app.user and project.isLikedByUser(app.user) %}
+                                    <i class="fas fa-thumbs-up"></i>
+                                {% else %}
+                                    <i class="far fa-thumbs-up"></i>
+                                {% endif %}
+                                <span class="js-likes">{{ project.likes | length }}</span>
+                                <span class="js-label">J'aime</span>
+                            </a>
+                        </figcaption>
+
+                    </figure>
+                {% endif %}
+            {% endfor %}
+        </figure>
+        <div class="navigation">
+            {{ knp_pagination_render(projects) }}
+        </div>
+    </main>
+{% endblock %}
+
+{% block javascripts %}
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="js/likes.js"></script>
+{% endblock %}

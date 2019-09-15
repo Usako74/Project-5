@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Usako - {{ project.title }}{% endblock %}
+
+{% block body %}
+    <main>
+        <h1>{{ project.title }}</h1>
+
+        <figure class="d-md-flex justify-content-center p-3 flex-wrap">
+                <figure class="w-50 p-3 mx-auto text-center">
+                    <img src="{{ asset('uploads/images/' ~ project.image) }}" class="w-75 h-img-project" alt="{{ project.title }}">
+                    <figcaption>
+                        {{ project.title }}<br>
+                        {{ project.description }} <br>
+                        <a href="{{ project.url }}">Lien vers le projet</a>
+                    </figcaption>
+                </figure>
+        </figure>
+    </main>
+{% endblock %}

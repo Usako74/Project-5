@@ -1,0 +1,20 @@
+{% block footer  %}
+
+    <div class="hr-style"><hr></div>
+
+    <footer class=" d-md-flex justify-content-center p-3 flex-wrap">
+        <p class="p-3">
+            <img src="/img/Browser.png" alt="logo" class="logo">
+            <a href="{{ path('index') }}">Home</a>
+        </p>
+        <p class="p-3">
+            <img src="/img/Camera.png" alt="logo" class="logo">
+            <a href="{{ path('projects') }}">Projets</a>
+        </p>
+        <p class="p-3">
+            <img src="/img/iPhone.png" alt="logo" class="logo">
+            <a href="{{ path('contact') }}">Contact</a>
+        </p>
+    </footer>
+
+{% endblock %}

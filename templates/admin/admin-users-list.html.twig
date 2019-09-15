@@ -1,0 +1,73 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Administration{% endblock %}
+
+{% block body %}
+    <main>
+        <h1>Administration - Liste des Utilisateurs</h1>
+
+        {% if editMode %}
+            {{ form_start(formEdit) }}
+            {{ form_errors(formEdit) }}
+
+            {{ form_row(formEdit.username, {
+                'attr': {'placeholder' : "Nom d\'utilisateur"},
+                'label': "Nom d\'utilisateur"
+            }) }}
+            {{ form_row(formEdit.password, {
+                'attr': {'placeholder' : "Mot de passe"},
+                'label': "Mot de passe"
+            }) }}
+            {{ form_row(formEdit.email, {
+                'attr': {'placeholder' : "E-mail"},
+                'label': "E-mail"
+            }) }}
+            {{ form_row(formEdit.createdAt, {
+                'attr': {'placeholder' : "Date de création"},
+                'label': "Date de création"
+            }) }}
+            {{ form_row(formEdit.roles) }}
+
+            <button type="submit" class="btn btn-info">Envoyer</button>
+            {{ form_end(formEdit) }}
+        {% else %}
+
+            <table class="table">
+                <thead class="thead-design">
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Nom d'utilisateur</th>
+                    <th scope="col">E-mail</th>
+                    <th scope="col">Date d'inscription</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Modifier</th>
+                    <th scope="col">Supprimer</th>
+                </tr>
+                </thead>
+                <tbody class="tbody-design">
+                {% for user in users %}
+                    <tr>
+                        <th scope="row" class="align-middle">{{ user.id }}</th>
+                        <td class="align-middle">{{ user.username }}</td>
+                        <td class="align-middle">{{ user.email }}</td>
+                        <td class="align-middle">{{ user.createdAt | date('d/m/Y') }} à {{ user.createdAt | date('H:i') }}</td>
+                        <td class="text-center align-middle">
+                            {% for role in user.roles %}
+                                {% if role == 'ROLE_ADMIN' %}
+                                    Administrateur
+                                {% else %}
+                                    Utilisateur
+                                {% endif %}
+                            {% endfor %}
+                        </td>
+                        <td class="text-center align-middle"><a href="{{ path('admin-users-list-edit', {'id': user.id}) }}">Modifier</a></td>
+                        <td class="text-center align-middle"><a href="#" class="delete-color">X</a></td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+
+        {% endif %}
+
+    </main>
+{% endblock %}

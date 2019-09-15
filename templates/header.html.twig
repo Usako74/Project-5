@@ -1,0 +1,66 @@
+{% block header %}
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark zindex-dropdown">
+            <div class="display-flex">
+                <img src="/img/circle.png" alt="logo" class="logo">
+                <a class="navbar-brand logo-name" href="{{ path('index') }}">Usako</a>
+            </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse bg-dropdown" id="navbarColor02">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item nav-space">
+                        <a href="{{ path('index') }}" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item nav-space">
+                        <a href="{{ path('projects') }}" class="nav-link">Projets</a>
+                    </li>
+                    <li class="nav-item nav-space">
+                        <a href="{{ path('contact') }}" class="nav-link">Contact</a>
+                    </li>
+                    <li class="nav-item nav-space dropdown">
+                        <a href="#" class="dropdown-toggle nav-link" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Utilisateur
+                        </a>
+                        <ul class="dropdown-menu bg-dropdown" aria-labelledby="dropdownMenuButton">
+                            {% if not app.user %}
+                                <li>
+                                    <a href="{{ path('login') }}" class="dropdown-item">Se connecter</a>
+                                </li>
+                                <li>
+                                    <a href="{{ path('registration') }}" class="dropdown-item">S'enregistrer</a>
+                                </li>
+                            {% else %}
+                                <li>
+                                    <a href="{{ path('logout') }}" class="dropdown-item">Se deconnecter</a>
+                                </li>
+                            {% endif %}
+                        </ul>
+                    </li>
+                    {% if is_granted('ROLE_ADMIN') %}
+                        <li class="nav-item nav-space dropdown">
+                            <a href="#" class="dropdown-toggle nav-link" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Administration
+                            </a>
+
+                            <ul class="dropdown-menu bg-dropdown" aria-labelledby="dropdownMenuButton">
+                                <li>
+                                    <a href="{{ path('admin') }}" class="dropdown-item">Tableau de bord</a>
+                                </li>
+                                <li>
+                                    <a href="{{ path('admin-project-list') }}" class="dropdown-item">Administration - Projets</a>
+                                </li>
+                                <li>
+                                    <a href="{{ path('admin-users-list') }}" class="dropdown-item">Administration - Utilisateurs</a>
+                                </li>
+                            </ul>
+                        </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+{% endblock %}

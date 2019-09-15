@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AdminController!{% endblock %}
+
+{% block body %}
+<main>
+    <h1>Administration</h1>
+    <nav>
+        <ul>
+            <li>
+                <a href="{{ path('admin-project-list') }}">Liste des projets</a>
+            </li>
+            <li>
+                <a href="{{ path('admin-project') }}">Ajouter un projet</a>
+            </li>
+            <li>
+                <a href="{{ path('admin-users-list') }}">Liste des utilisateurs</a>
+            </li>
+        </ul>
+    </nav>
+</main>
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+{% block title %}Usako - Page de contact{% endblock %}
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+
+{% block body %}
+    <main>
+        {% if app.request.method == 'POST' and form.vars.valid %}
+            <h1>Message envoyé !</h1>
+            <p>Merci pour votre méssage, vous recevrez une réponse dans les meilleurs delais</p>
+        {% else %}
+            <h1>Page de contact</h1>
+
+            {{ form_start(form) }}
+
+            {{ form_errors(form) }}
+
+            {{ form_row(form.name, {
+                'attr': {'placeholder' : "Nom"},
+                'label': "Nom"
+            }) }}
+            {{ form_row(form.firstName, {
+                'attr': {'placeholder' : "Prénom"},
+                'label': "Prénom"
+            }) }}
+            {{ form_row(form.email, {
+                'attr': {'placeholder' : "Email"},
+                'label': "Email"
+            }) }}
+            {{ form_row(form.subject, {
+                'attr': {'placeholder' : "Sujet"},
+                'label': "Sujet"
+            }) }}
+            {{ form_row(form.content, {
+                'attr': {'placeholder' : "Votre message"},
+                'label': "Message"
+            }) }}
+
+            <button type="submit" class="btn btn-info">Envoyer</button>
+
+            {{ form_end(form) }}
+        {% endif %}
+
+    </main>
+{% endblock %}

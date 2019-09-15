@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Usako - Index{% endblock %}
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+
+{% block body %}
+    <main>
+        <h1>Administration - Projets</h1>
+
+        {{ form_start(form) }}
+
+        {{ form_errors(form) }}
+
+        {{ form_row(form.title, {
+            'attr': {'placeholder' : "Titre"},
+            'label': "Titre"
+        }) }}
+        {{ form_row(form.description, {
+            'attr': {'placeholder' : "Description"},
+            'label': "Description"
+        }) }}
+        {{ form_row(form.image, {
+            'attr':{'class':'file-loading'},
+            'label': "Image"
+        }) }}
+        {{ form_row(form.url, {
+            'attr': {'placeholder' : "URL du projet"},
+            'label': "URL"
+        }) }}
+        {{ form_row(form.status, {
+            'label': "Status"
+        }) }}
+
+        <button type="submit" class="btn btn-info">Envoyer</button>
+
+        {{ form_end(form) }}
+    </main>
+
+
+{% endblock %}
+
+{% block javascripts %}
+<script type="text/javascript">
+$(document).on('change', '.custom-file-input', function () {
+    let fileName = $(this).val().replace(/\\/g, '/').replace(/.*\//, '');
+    $(this).parent('.custom-file').find('.custom-file-label').text(fileName);
+});
+</script>
+{% endblock %}
