@@ -2,8 +2,10 @@
 
 namespace App\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+//use http\Env\Request;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+
 
 class SiteController extends AbstractController
 {
@@ -12,17 +14,6 @@ class SiteController extends AbstractController
      */
     public function index()
     {
-        return $this->render('site/index.html.twig', [
-            'controller_name' => 'SiteController',
-        ]);
-    }
-
-
-    /**
-     * @Route("/site", name="home")
-     */
-    public function home()
-    {
-        return $this->render('site/home.html.twig');
+        return $this->render('site/index.html.twig');
     }
 }
