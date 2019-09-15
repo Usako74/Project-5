@@ -24,3 +24,13 @@ bin/
 config/
 *.dist
 *.lock
+
+public/img/
+
+public/\.htaccess
+
+public/uploads/images/
+
+src/Migrations/
+
+src/Security/
