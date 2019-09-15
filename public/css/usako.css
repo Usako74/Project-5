@@ -1,0 +1,195 @@
+body {
+    color: white;
+    background-color: #282a2e;
+}
+
+nav {
+    z-index: 1000;
+}
+
+a {
+    color: white !important;
+}
+
+a:hover {
+    color: rgb(151,194,72) !important;
+    text-decoration: none;
+}
+
+a:focus {
+    color: rgb(151,194,72) !important;
+}
+
+main {
+    padding: 3%;
+}
+
+footer {
+    padding: 3%;
+}
+
+h1 {
+    text-align: center;
+    padding-bottom: 55px;
+}
+
+figure {
+    margin-bottom: 3em;
+}
+
+hr {
+    margin: 0;
+    background-color: white;
+    -webkit-box-shadow: 0 0 8px 0 rgba(255,255,255,1);
+    -moz-box-shadow: 0 0 8px 0 rgba(255,255,255,1);
+    box-shadow: 0 0 8px 0 rgba(255,255,255,1);
+}
+
+.hr-style {
+    width: 75%;
+    height: 5px;
+    margin: auto;
+}
+
+.display-flex {
+    display: flex;
+}
+
+.transparency {
+    opacity: 0;
+}
+
+.full-size {
+    width: 100%;
+    height: 100%;
+}
+
+.white-color {
+    color: white;
+}
+
+/* Navbar Design */
+.navbar-dark {
+    height: 110px;
+}
+
+.nav-space {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.dropdown-toggle::after {
+    margin-left: 0;
+}
+
+.bg-dropdown {
+    background-color: #282a2e;
+}
+
+.bg-dropdown a:hover {
+    background-color: #282a2e;
+}
+
+.logo-name {
+    margin-right: 235px;
+}
+
+.logo {
+    margin-left: 130px;
+    margin-right: 10px;
+    height: 25px;
+    align-self: center;
+}
+
+/* Slider */
+.slider {
+    height: 531px;
+}
+
+.showslider {
+    width: 100%;
+    height: 531px;
+}
+
+.left {
+    left: 0;
+}
+
+.right {
+    right: 0;
+    z-index: 1000;
+}
+
+.play {
+    display: none;
+    opacity: 0.4;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+}
+
+.pause {
+    opacity: 0.4;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+}
+
+.icon-center {
+    align-items: center;
+    margin: auto;
+    flex-direction: column;
+    height: 10%;
+}
+
+.circle-icon {
+    border: 3px solid white;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    line-height: 25px;
+}
+
+.slider-icons {
+    z-index: 2;
+}
+
+/* Main Block Design */
+/* Project */
+.h-img-project {
+    height: 300px;
+}
+
+/* Pagination */
+.pagination {
+    justify-content: center;
+}
+
+.page-link, .page-item.disabled .page-link, .page-link:hover {
+    background-color: #282a2e;
+    border: none;
+}
+
+.page-item.active .page-link {
+    border: 1px solid rgba(0,0,0,.3);
+    background-color: rgba(255,255,255,0);
+}
+
+/* Admin Page */
+.delete-color {
+    color: red !important;
+}
+
+.min-img {
+    width: 60px;
+    height: 50px;
+}
+
+.thead-design {
+    background-color: white;
+}
+
+.tbody-design {
+    background-color: #adb5bd;
+}
+

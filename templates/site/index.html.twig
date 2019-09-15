@@ -3,6 +3,51 @@
 {% block title %}Usako - Index{% endblock %}
 
 {% block body %}
+    <div id="slider">
+        <div class="slider display-flex">
+            <figure class="display-flex">
+                <figure class="position-absolute slider-icons right">
+                    <img src="img/icons.png" alt="icons">
+                </figure>
+                <figure class="showslider position-absolute">
+                    <img src="https://via.placeholder.com/1250x580/453a34/808080" alt="Photo d'une aurore boréale" class="full-size">
+                </figure>
+                <figure  class="showslider position-absolute transparency">
+                    <img src="https://via.placeholder.com/1250x580/453a34/586455" alt="Photo d'un paysage montagneux" class="full-size">
+                </figure>
+                <figure  class="showslider position-absolute transparency">
+                    <img src="https://via.placeholder.com/1250x580/453a34/111111" alt="Photo d'un lac" class="full-size">
+                </figure>
+            </figure>
+            <i class="fas fa-angle-left fa position-absolute left align-self-center white-color circle-icon text-center" id="button_left"></i>
+            <i class="fas fa-angle-right fa position-absolute right align-self-center white-color circle-icon text-center" id="button_right"></i>
+            <div class="display-flex icon-center">
+                <i class="far fa-pause-circle fa-4x position-absolute pause white-color" id="button_pause"></i>
+                <i class="far fa-play-circle fa-4x position-absolute play white-color" id="button_play"></i>
+            </div>
+        </div>
+    </div>
+    <main>
+        <h1>Accueil du site</h1>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid aut autem beatae deleniti enim eos expedita
+            facere inventore ipsa maiores maxime mollitia nihil non nulla perspiciatis quae quas ratione repudiandae,
+            sed voluptatem. Alias consequuntur eius, eos facilis laudantium molestias nostrum omnis optio placeat qui,
+            quod ullam ut voluptate. Deleniti, eveniet.</p>
+        <p>A architecto, commodi debitis nulla odio quae vitae? Aliquam aperiam corporis dignissimos in magnam maxime
+            perspiciatis quidem quod vitae voluptatem? Culpa, iste officiis. Amet aperiam consequuntur corporis
+            dignissimos dolor doloremque facere, fugiat iusto necessitatibus nisi non nulla officiis quod, sit totam!
+            Illo maxime molestias optio quam unde? Dolore harum, sequi.</p>
+        <p>Animi commodi, deleniti ea eius laborum magnam numquam odit officia placeat quisquam rerum, sapiente tenetur!
+            Cum, odit quo. Aperiam deserunt eos est explicabo harum magnam nesciunt perferendis rem sit unde. Ab at
+            earum expedita explicabo ipsa minus odio odit, officia placeat porro quibusdam quisquam quos repudiandae
+            sapiente, sit soluta ut!</p>
+    </main>
 
 
+{% endblock %}
+
+{% block javascripts %}
+    <script src="js/Slider.js"></script>
+    <script src="js/script.js"></script>
 {% endblock %}

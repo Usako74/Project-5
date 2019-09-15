@@ -18,15 +18,9 @@
 ###< symfony/web-server-bundle ###
 
 \.idea/
-
 *.test
-
 \.env
-
 bin/
-
 config/
-
 *.dist
-
 *.lock
