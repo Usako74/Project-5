@@ -2,7 +2,6 @@
 
 namespace App\Controller;
 
-//use App\Form\LoginType;
 use App\Form\RegistrationType;
 use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -23,7 +22,7 @@ class UserController extends AbstractController
     public function registration(Request $request, ObjectManager $manager, UserPasswordEncoderInterface $encoder): Response
     {
         $user = new Users();
-        $form = $this->createForm(RegistrationType::class, $user);
+        $form = $this->createForm(RegistrationType::class, $user, ['attr' => ['class' => 'w-25 m-form']]);
 
         $user->setCreatedAt(new \DateTime());
         $user->setRoles(["ROLE_USER"]);
@@ -35,7 +34,7 @@ class UserController extends AbstractController
             $user->setPassword($hash);
             $manager->persist($user);
             $manager->flush();
-            //$this->addFlash('register', 'Votre compte a été crée');
+            $this->addFlash('register', 'Votre compte a été crée');
             $this->redirectToRoute('login');
         }
 

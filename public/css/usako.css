@@ -21,11 +21,16 @@ a:focus {
 }
 
 main {
-    padding: 3%;
+    padding: 5% 0 0;
+}
+
+form {
+    margin: 5%;
 }
 
 footer {
     padding: 3%;
+    text-align: center;
 }
 
 h1 {
@@ -33,9 +38,6 @@ h1 {
     padding-bottom: 55px;
 }
 
-figure {
-    margin-bottom: 3em;
-}
 
 hr {
     margin: 0;
@@ -48,7 +50,7 @@ hr {
 .hr-style {
     width: 75%;
     height: 5px;
-    margin: auto;
+    margin: 2.5em auto auto;
 }
 
 .display-flex {
@@ -90,25 +92,25 @@ hr {
     background-color: #282a2e;
 }
 
-.logo-name {
-    margin-right: 235px;
+.nav-margin {
+    margin-left: 235px;
 }
 
 .logo {
-    margin-left: 130px;
-    margin-right: 10px;
+    margin-left: 0;
+    padding-right: 10px;
     height: 25px;
     align-self: center;
 }
 
 /* Slider */
 .slider {
-    height: 531px;
+    height: 260px;
 }
 
 .showslider {
     width: 100%;
-    height: 531px;
+    height: 260px;
 }
 
 .left {
@@ -151,13 +153,24 @@ hr {
 }
 
 .slider-icons {
+    height: 260px;
     z-index: 2;
+}
+
+.slider-icons img {
+    max-height: 100%;
 }
 
 /* Main Block Design */
 /* Project */
 .h-img-project {
-    height: 300px;
+    max-height: 450px;
+}
+
+/* Skills */
+.size-img-skills {
+    max-width: 100%;
+    max-height: 100px;
 }
 
 /* Pagination */
@@ -193,3 +206,124 @@ hr {
     background-color: #adb5bd;
 }
 
+/* Icons Design Index */
+.sm-w-100 {
+    width: 100% !important;
+}
+
+/* Form Page (login-register-contact) */
+.img-form {
+    display: none;
+}
+
+.m-form {
+    margin: 0 5%;
+}
+
+/* width 100% forcing */
+.w-25 {
+    width: 100% !important;
+}
+
+.circle-rad {
+    border-radius: 50%;
+}
+
+@media screen and (min-width: 769px) {
+    main {
+        padding: 3%;
+    }
+
+    form {
+        margin: 0;
+    }
+
+    footer {
+        text-align: left;
+    }
+
+    .logo {
+        margin-left: 2em;
+    }
+
+    /* Slider */
+    .slider {
+        height: 445px;
+    }
+
+    .showslider {
+        height: 445px;
+    }
+
+    .slider-icons {
+        height: 445px;
+    }
+
+    .w-25 {
+        width: 25% !important;
+    }
+
+    .w-50 {
+        width: 50% !important;
+    }
+
+    .w-75 {
+        width: 75%!important;
+    }
+
+    .align-center {
+        margin: auto;
+    }
+
+    /* Form Page (login-register-contact) */
+    .img-form {
+        margin: auto 0 auto 10%;
+        display: block;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .slider {
+        height: 615px;
+    }
+
+    .showslider {
+        height: 615px;
+    }
+
+    .slider-icons {
+        height: 615px;
+    }
+
+    .slider-icons img {
+        height: 100%;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .slider {
+        height: 650px;
+    }
+
+    .showslider {
+        height: 650px;
+    }
+
+    .slider-icons {
+        height: 650px;
+    }
+}
+
+@media screen and (min-width: 1921px) {
+    .slider {
+        height: 980px;
+    }
+
+    .showslider {
+        height: 980px;
+    }
+
+    .slider-icons {
+        height: 980px;
+    }
+}

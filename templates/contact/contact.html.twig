@@ -4,41 +4,45 @@
 
 {% block body %}
     <main>
-        {% if app.request.method == 'POST' and form.vars.valid %}
-            <h1>Message envoyé !</h1>
-            <p>Merci pour votre méssage, vous recevrez une réponse dans les meilleurs delais</p>
-        {% else %}
-            <h1>Page de contact</h1>
+        <h1>Page de contact</h1>
+        <div class="display-flex">
+            <figure class="img-form">
+                <img src="{{ asset('img/contact/email.png') }}" alt="Image de contact" class="w-75">
+            </figure>
+            {% if app.request.method == 'POST' and form.vars.valid %}
+                <h2>Message envoyé !</h2>
+                <p>Merci pour votre méssage, vous recevrez une réponse dans les meilleurs delais</p>
+            {% else %}
+                {{ form_start(form, { 'attr' : { 'class': 'w-25 m-form' } }) }}
 
-            {{ form_start(form) }}
+                {{ form_errors(form) }}
 
-            {{ form_errors(form) }}
+                {{ form_row(form.name, {
+                    'attr': {'placeholder' : "Nom"},
+                    'label': "Nom"
+                }) }}
+                {{ form_row(form.firstName, {
+                    'attr': {'placeholder' : "Prénom"},
+                    'label': "Prénom"
+                }) }}
+                {{ form_row(form.email, {
+                    'attr': {'placeholder' : "Email"},
+                    'label': "Email"
+                }) }}
+                {{ form_row(form.subject, {
+                    'attr': {'placeholder' : "Sujet"},
+                    'label': "Sujet"
+                }) }}
+                {{ form_row(form.content, {
+                    'attr': {'placeholder' : "Votre message"},
+                    'label': "Message"
+                }) }}
 
-            {{ form_row(form.name, {
-                'attr': {'placeholder' : "Nom"},
-                'label': "Nom"
-            }) }}
-            {{ form_row(form.firstName, {
-                'attr': {'placeholder' : "Prénom"},
-                'label': "Prénom"
-            }) }}
-            {{ form_row(form.email, {
-                'attr': {'placeholder' : "Email"},
-                'label': "Email"
-            }) }}
-            {{ form_row(form.subject, {
-                'attr': {'placeholder' : "Sujet"},
-                'label': "Sujet"
-            }) }}
-            {{ form_row(form.content, {
-                'attr': {'placeholder' : "Votre message"},
-                'label': "Message"
-            }) }}
-
-            <button type="submit" class="btn btn-info">Envoyer</button>
-
-            {{ form_end(form) }}
-        {% endif %}
-
+                <div class="form-group text-center">
+                    <button type="submit" class="btn btn-info">Envoyer</button>
+                </div>
+                {{ form_end(form) }}
+            {% endif %}
+        </div>
     </main>
 {% endblock %}

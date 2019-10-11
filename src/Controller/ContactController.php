@@ -16,7 +16,7 @@ class ContactController extends AbstractController
     public function contact(Request $request, \Swift_Mailer $mailer)
     {
         $contact = new Task();
-        $form = $this->createForm(ContactType::class, $contact);
+        $form = $this->createForm(ContactType::class, $contact, ['attr' => ['class' => 'w-25 m-form']]);
 
         $form->handleRequest($request);
 
