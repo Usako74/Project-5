@@ -10,8 +10,8 @@
             {% for project in projects %}
                 {% if project.status == 1 %}
 
-                    <figure class="w-50 p-3 mx-auto text-center">
-                        <img src="{{ asset('uploads/images/' ~ project.image) }}" class="w-75 h-img-project" alt="image du projet {{ project.id }}">
+                    <figure class="w-50 sm-w-100 p-3 mx-auto text-center">
+                        <img src="{{ asset('uploads/images/' ~ project.image) }}" class="w-75 sm-w-100 h-img-project" alt="image du projet {{ project.id }}">
                         <figcaption>
                             {{ project.title }}<br>
 

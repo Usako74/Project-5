@@ -7,16 +7,16 @@
         <div class="slider display-flex">
             <figure class="display-flex">
                 <figure class="position-absolute slider-icons right">
-                    <img src="img/icons.png" alt="icons">
+                    <img src="{{ asset('img/icons.png') }}" alt="icons">
                 </figure>
                 <figure class="showslider position-absolute">
-                    <img src="https://via.placeholder.com/1250x580/453a34/808080" alt="Photo d'une aurore boréale" class="full-size">
+                    <img src="{{ asset('img/slider/img1.jpg') }}" alt="Image informatique" class="full-size">
                 </figure>
                 <figure  class="showslider position-absolute transparency">
-                    <img src="https://via.placeholder.com/1250x580/453a34/586455" alt="Photo d'un paysage montagneux" class="full-size">
+                    <img src="{{ asset('img/slider/img2.jpg') }}" alt="Image informatique" class="full-size">
                 </figure>
                 <figure  class="showslider position-absolute transparency">
-                    <img src="https://via.placeholder.com/1250x580/453a34/111111" alt="Photo d'un lac" class="full-size">
+                    <img src="{{ asset('img/slider/img3.jpg') }}" alt="Image informatique" class="full-size">
                 </figure>
             </figure>
             <i class="fas fa-angle-left fa position-absolute left align-self-center white-color circle-icon text-center" id="button_left"></i>
@@ -29,19 +29,26 @@
     </div>
     <main>
         <h1>Accueil du site</h1>
-
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid aut autem beatae deleniti enim eos expedita
-            facere inventore ipsa maiores maxime mollitia nihil non nulla perspiciatis quae quas ratione repudiandae,
-            sed voluptatem. Alias consequuntur eius, eos facilis laudantium molestias nostrum omnis optio placeat qui,
-            quod ullam ut voluptate. Deleniti, eveniet.</p>
-        <p>A architecto, commodi debitis nulla odio quae vitae? Aliquam aperiam corporis dignissimos in magnam maxime
-            perspiciatis quidem quod vitae voluptatem? Culpa, iste officiis. Amet aperiam consequuntur corporis
-            dignissimos dolor doloremque facere, fugiat iusto necessitatibus nisi non nulla officiis quod, sit totam!
-            Illo maxime molestias optio quam unde? Dolore harum, sequi.</p>
-        <p>Animi commodi, deleniti ea eius laborum magnam numquam odit officia placeat quisquam rerum, sapiente tenetur!
-            Cum, odit quo. Aperiam deserunt eos est explicabo harum magnam nesciunt perferendis rem sit unde. Ab at
-            earum expedita explicabo ipsa minus odio odit, officia placeat porro quibusdam quisquam quos repudiandae
-            sapiente, sit soluta ut!</p>
+        <figure class="d-md-flex justify-content-center p-3 flex-wrap">
+            <figure class="w-25 sm-w-100 h-50 p-3 mx-auto text-center">
+                <img src="{{ asset('img/skills/html5.svg.png') }}" alt="html5 logo" class="size-img-skills">
+            </figure>
+            <figure class="w-25 sm-w-100 h-50 p-3 mx-auto text-center">
+                <img src="{{ asset('img/skills/css3.svg.png') }}" alt="css3 logo" class="size-img-skills">
+            </figure>
+            <figure class="w-25 sm-w-100 h-50 p-3 mx-auto text-center">
+                <img src="{{ asset('img/skills/js.svg.png') }}" alt="js logo" class="size-img-skills">
+            </figure>
+            <figure class="w-25 sm-w-100 h-50 p-3 mx-auto text-center">
+                <img src="{{ asset('img/skills/php.svg.png') }}" alt="php logo" class="size-img-skills">
+            </figure>
+            <figure class="w-25 sm-w-100 h-50 p-3 mx-auto text-center">
+                <img src="{{ asset('img/skills/symfony.svg.png') }}" alt="symfony logo" class="size-img-skills">
+            </figure>
+            <figure class="w-25 sm-w-100 h-50 p-3 mx-auto text-center">
+                <img src="{{ asset('img/skills/wordpress.svg.png') }}" alt="wordpress logo" class="size-img-skills">
+            </figure>
+        </figure>
     </main>
 
 

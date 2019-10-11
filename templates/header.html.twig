@@ -2,14 +2,14 @@
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark zindex-dropdown">
             <div class="display-flex">
-                <img src="/img/circle.png" alt="logo" class="logo">
-                <a class="navbar-brand logo-name" href="{{ path('index') }}">Usako</a>
+                <img src="{{ asset('img/circle.png') }}" alt="logo" class="logo">
+                <a class="navbar-brand" href="{{ path('index') }}">Usako</a>
             </div>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <div class="collapse navbar-collapse bg-dropdown" id="navbarColor02">
+            <div class="nav-margin collapse navbar-collapse bg-dropdown" id="navbarColor02">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item nav-space">
                         <a href="{{ path('index') }}" class="nav-link">Home</a>
