@@ -92,15 +92,15 @@ hr {
     background-color: #282a2e;
 }
 
-.nav-margin {
-    margin-left: 235px;
-}
-
 .logo {
     margin-left: 0;
     padding-right: 10px;
     height: 25px;
     align-self: center;
+}
+
+.m-username {
+    margin: auto;
 }
 
 /* Slider */
@@ -246,6 +246,10 @@ hr {
         margin-left: 2em;
     }
 
+    .nav-margin {
+        margin-left: 30px;
+    }
+
     /* Slider */
     .slider {
         height: 445px;
@@ -283,6 +287,10 @@ hr {
 }
 
 @media screen and (min-width: 1024px) {
+    .m-username {
+        margin-right: 2em;
+    }
+
     .slider {
         height: 615px;
     }
@@ -301,6 +309,10 @@ hr {
 }
 
 @media screen and (min-width: 1440px) {
+    .nav-margin {
+        margin-left: 235px;
+    }
+
     .slider {
         height: 650px;
     }

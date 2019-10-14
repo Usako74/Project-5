@@ -34,3 +34,5 @@ public/uploads/images/
 src/Migrations/
 
 src/Security/
+
+public/favicon.ico
