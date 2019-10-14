@@ -5,9 +5,7 @@
                 <img src="{{ asset('img/circle.png') }}" alt="logo" class="logo">
                 <a class="navbar-brand" href="{{ path('index') }}">Usako</a>
             </div>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+
 
             <div class="nav-margin collapse navbar-collapse bg-dropdown" id="navbarColor02">
                 <ul class="navbar-nav mr-auto">
@@ -60,6 +58,16 @@
                     {% endif %}
                 </ul>
             </div>
+
+            {% if app.user %}
+                <p class="m-username">
+                    Bonjour {{ app.user.username }} !
+                </p>
+            {% endif %}
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
         </nav>
     </header>
 
