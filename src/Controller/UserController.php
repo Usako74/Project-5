@@ -34,8 +34,7 @@ class UserController extends AbstractController
             $user->setPassword($hash);
             $manager->persist($user);
             $manager->flush();
-            $this->addFlash('register', 'Votre compte a été crée');
-            $this->redirectToRoute('login');
+            return $this->redirectToRoute('login');
         }
 
 
