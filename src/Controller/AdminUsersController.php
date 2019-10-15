@@ -14,6 +14,10 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use Symfony\Component\Security\Core\User\User;
 
+/**
+ * Class AdminUsersController
+ * @package App\Controller
+ */
 class AdminUsersController extends AbstractController
 {
 

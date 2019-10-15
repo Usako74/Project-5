@@ -13,6 +13,10 @@ use Symfony\Component\HttpFoundation\File\Exception\FileException;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
+/**
+ * Class AdminProjectController
+ * @package App\Controller
+ */
 class AdminProjectController extends AbstractController
 {
     /**

@@ -13,7 +13,10 @@ use App\Entity\Users;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
 
-
+/**
+ * Class UserController
+ * @package App\Controller
+ */
 class UserController extends AbstractController
 {
     /**

@@ -56,16 +56,26 @@ class Users implements UserInterface
      */
     private $roles = [];
 
+    /**
+     * @return int|null
+     */
     public function getId(): ?int
     {
         return $this->id;
     }
 
+    /**
+     * @return string|null
+     */
     public function getUsername(): ?string
     {
         return $this->username;
     }
 
+    /**
+     * @param string $username
+     * @return Users
+     */
     public function setUsername(string $username): self
     {
         $this->username = $username;
@@ -73,11 +83,18 @@ class Users implements UserInterface
         return $this;
     }
 
+    /**
+     * @return string|null
+     */
     public function getPassword(): ?string
     {
         return $this->password;
     }
 
+    /**
+     * @param string $password
+     * @return Users
+     */
     public function setPassword(string $password): self
     {
         $this->password = $password;
@@ -85,11 +102,18 @@ class Users implements UserInterface
         return $this;
     }
 
+    /**
+     * @return string|null
+     */
     public function getEmail(): ?string
     {
         return $this->email;
     }
 
+    /**
+     * @param string $email
+     * @return Users
+     */
     public function setEmail(string $email): self
     {
         $this->email = $email;
@@ -97,11 +121,18 @@ class Users implements UserInterface
         return $this;
     }
 
+    /**
+     * @return \DateTimeInterface|null
+     */
     public function getCreatedAt(): ?\DateTimeInterface
     {
         return $this->createdAt;
     }
 
+    /**
+     * @param \DateTimeInterface $createdAt
+     * @return Users
+     */
     public function setCreatedAt(\DateTimeInterface $createdAt): self
     {
         $this->createdAt = $createdAt;
@@ -109,22 +140,35 @@ class Users implements UserInterface
         return $this;
     }
 
+    /**
+     *
+     */
     public function eraseCredentials()
     {
 
     }
 
+    /**
+     * @return string|void|null
+     */
     public function getSalt()
     {
 
     }
 
+    /**
+     * @param array $roles
+     * @return $this
+     */
     public function setRoles(array $roles)
     {
         $this->roles = $roles;
         return $this;
     }
 
+    /**
+     * @return array
+     */
     public function getRoles(): array
     {
         $roles = $this->roles;

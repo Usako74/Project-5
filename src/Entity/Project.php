@@ -52,21 +52,34 @@ class Project
      */
     private $likes;
 
+    /**
+     * Project constructor.
+     */
     public function __construct()
     {
         $this->likes = new ArrayCollection();
     }
 
+    /**
+     * @return int|null
+     */
     public function getId(): ?int
     {
         return $this->id;
     }
 
+    /**
+     * @return string|null
+     */
     public function getTitle(): ?string
     {
         return $this->title;
     }
 
+    /**
+     * @param string $title
+     * @return Project
+     */
     public function setTitle(string $title): self
     {
         $this->title = $title;
@@ -74,11 +87,18 @@ class Project
         return $this;
     }
 
+    /**
+     * @return string|null
+     */
     public function getDescription(): ?string
     {
         return $this->description;
     }
 
+    /**
+     * @param string $description
+     * @return Project
+     */
     public function setDescription(string $description): self
     {
         $this->description = $description;
@@ -86,11 +106,18 @@ class Project
         return $this;
     }
 
+    /**
+     * @return string|null
+     */
     public function getImage(): ?string
     {
         return $this->image;
     }
 
+    /**
+     * @param string $image
+     * @return Project
+     */
     public function setImage(string $image): self
     {
         $this->image = $image;
@@ -98,11 +125,18 @@ class Project
         return $this;
     }
 
+    /**
+     * @return string|null
+     */
     public function getUrl(): ?string
     {
         return $this->url;
     }
 
+    /**
+     * @param string $url
+     * @return Project
+     */
     public function setUrl(string $url): self
     {
         $this->url = $url;
@@ -110,11 +144,18 @@ class Project
         return $this;
     }
 
+    /**
+     * @return bool|null
+     */
     public function getStatus(): ?bool
     {
         return $this->status;
     }
 
+    /**
+     * @param bool $status
+     * @return Project
+     */
     public function setStatus(bool $status): self
     {
         $this->status = $status;
@@ -130,6 +171,10 @@ class Project
         return $this->likes;
     }
 
+    /**
+     * @param PostLike $like
+     * @return Project
+     */
     public function addLike(PostLike $like): self
     {
         if (!$this->likes->contains($like)) {
@@ -140,6 +185,10 @@ class Project
         return $this;
     }
 
+    /**
+     * @param PostLike $like
+     * @return Project
+     */
     public function removeLike(PostLike $like): self
     {
         if ($this->likes->contains($like)) {
