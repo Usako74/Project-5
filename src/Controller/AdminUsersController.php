@@ -2,17 +2,18 @@
 
 namespace App\Controller;
 
+use App\Entity\Project;
 use App\Form\AdminUsersType;
+use App\Repository\PostLikeRepository;
+use App\Repository\ProjectRepository;
 use Doctrine\Common\Persistence\ObjectManager;
 use Knp\Component\Pager\PaginatorInterface;
-use App\Form\UserSearchType;
 use App\Entity\Users;
 use App\Repository\UsersRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
-use Symfony\Component\Security\Core\User\User;
 
 /**
  * Class AdminUsersController
@@ -26,17 +27,7 @@ class AdminUsersController extends AbstractController
      */
     public function AdminUsersList(UsersRepository $repository, PaginatorInterface $paginator, Request $request, Users $users = null)
     {
-        $form = $this->createForm(UserSearchType::class, $users);
-        $form-> handleRequest($request);
-        if ($form->isSubmitted() && $form->isValid()) {
-            if (!$users = null) {
-                $repository->findBy(['email' => 'test@test.fr']);
-                return $this->render('admin/admin-users-list.html.twig', [
-                    'users' => $repository,
-                    'form' => $form->createView()
-                ]);
-            }
-        }
+
 
         $usersPages = $paginator->paginate($repository->findAll(),
             $request->query->getInt('page', 1),
@@ -44,7 +35,6 @@ class AdminUsersController extends AbstractController
 
         return $this->render('admin/admin-users-list.html.twig', [
             'users' => $usersPages,
-            'form' => $form->createView(),
             'editMode' => $repository->findAll() == null
         ]);
 
@@ -80,5 +70,24 @@ class AdminUsersController extends AbstractController
             'users' => $users,
             'editMode' => $users->getId() !== null
         ]);
+    }
+
+    /**
+     * @Route("admin-user-list/{id}/delete", name="admin-user-delete")
+     */
+    public function adminDeleteUser(Users $users, PostLikeRepository $likeRepository, ObjectManager $manager)
+    {
+        $like = $likeRepository->findBy([
+            'user' => $users
+        ]);
+
+        foreach ($like as $likes){
+            $manager->remove($likes);
+        }
+
+        $manager->remove($users);
+        $manager->flush();
+
+        return $this->redirectToRoute('admin-users-list');
     }
 }

@@ -61,7 +61,7 @@
                             {% endfor %}
                         </td>
                         <td class="text-center align-middle"><a href="{{ path('admin-users-list-edit', {'id': user.id}) }}">Modifier</a></td>
-                        <td class="text-center align-middle"><a href="#">X</a></td>
+                        <td class="text-center align-middle"><a href="{{ path('admin-user-delete', {'id': user.id}) }}">X</a></td>
                     </tr>
                 {% endfor %}
                 </tbody>
