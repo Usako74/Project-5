@@ -17,7 +17,7 @@
 
                             <a href="{{ path('project', {'id': project.id}) }}">Plus d'informations</a>
                             <br>
-                            <a href="{{ path('postlike', {'id': project.id}) }}" class="btn btn-link js-like">
+                            <a href="{{ path('postlike', {'id': project.id}) }}" class="js-like">
                                 {% if app.user and project.isLikedByUser(app.user) %}
                                     <i class="fas fa-thumbs-up"></i>
                                 {% else %}

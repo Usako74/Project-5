@@ -8,16 +8,18 @@ nav {
 }
 
 a {
-    color: white !important;
+    color: white;
+    padding-right: .5rem;
+    padding-left: .5rem;
 }
 
 a:hover {
-    color: rgb(151,194,72) !important;
+    color: rgb(151,194,72);
     text-decoration: none;
 }
 
 a:focus {
-    color: rgb(151,194,72) !important;
+    color: rgb(151,194,72);
 }
 
 main {
@@ -46,6 +48,25 @@ hr {
     -moz-box-shadow: 0 0 8px 0 rgba(255,255,255,1);
     box-shadow: 0 0 8px 0 rgba(255,255,255,1);
 }
+
+/* fix css bootstrap */
+.navbar-toggler {
+    background-color: #212529;
+}
+
+.dropdown-item {
+     color: white;
+ }
+
+.dropdown-item:hover {
+    color: rgb(151,194,72);
+}
+
+.dropdown-item:focus {
+    color: rgb(151,194,72);
+}
+
+/* end fix css bootstrap */
 
 .hr-style {
     width: 75%;
@@ -189,10 +210,6 @@ hr {
 }
 
 /* Admin Page */
-.delete-color {
-    color: red !important;
-}
-
 .min-img {
     width: 60px;
     height: 50px;

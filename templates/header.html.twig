@@ -10,16 +10,16 @@
             <div class="nav-margin collapse navbar-collapse bg-dropdown" id="navbarColor02">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item nav-space">
-                        <a href="{{ path('index') }}" class="nav-link">Home</a>
+                        <a href="{{ path('index') }}">Home</a>
                     </li>
                     <li class="nav-item nav-space">
-                        <a href="{{ path('projects') }}" class="nav-link">Projets</a>
+                        <a href="{{ path('projects') }}">Projets</a>
                     </li>
                     <li class="nav-item nav-space">
-                        <a href="{{ path('contact') }}" class="nav-link">Contact</a>
+                        <a href="{{ path('contact') }}">Contact</a>
                     </li>
                     <li class="nav-item nav-space dropdown">
-                        <a href="#" class="dropdown-toggle nav-link" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a href="#" class="dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Utilisateur
                         </a>
                         <ul class="dropdown-menu bg-dropdown" aria-labelledby="dropdownMenuButton">
@@ -39,7 +39,7 @@
                     </li>
                     {% if is_granted('ROLE_ADMIN') %}
                         <li class="nav-item nav-space dropdown">
-                            <a href="#" class="dropdown-toggle nav-link" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a href="#" class="dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Administration
                             </a>
 
