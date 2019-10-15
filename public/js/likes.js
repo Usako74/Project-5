@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 function onClickBtnLike(event) {
     event.preventDefault();
@@ -17,9 +17,9 @@ function onClickBtnLike(event) {
         }
     }).catch(function (error) {
         if (error.response.status === 403) {
-            window.alert("Vous devez vous connecter pour liker un projet.")
+            window.alert("Vous devez vous connecter pour liker un projet.");
         } else {
-            window.alert("Une erreur s'est produite, réessayez plus tard.")
+            window.alert("Une erreur s'est produite, réessayez plus tard.");
         }
     });
 }

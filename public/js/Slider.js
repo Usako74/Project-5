@@ -66,7 +66,7 @@ class Slider {
             that.btnRight();
             if (that.statusSlider === 1) {
                 clearInterval(that.timer);
-                that.timer = setInterval(function(){that.btnRight()},5000);
+                that.timer = setInterval(function(){that.btnRight();},5000);
             }
         });
 
@@ -75,7 +75,7 @@ class Slider {
             that.btnLeft();
             if (that.statusSlider === 1) {
                 clearInterval(that.timer);
-                that.timer = setInterval(function(){that.btnRight()},5000);
+                that.timer = setInterval(function(){that.btnRight();},5000);
             }
         });
 
@@ -94,7 +94,7 @@ class Slider {
 
         // Play Button Click
         that.playSlide.addEventListener("click", function(){
-            that.timer = setInterval(function(){that.btnRight()},5000);
+            that.timer = setInterval(function(){that.btnRight();},5000);
             that.btnPlay();
         });
 
@@ -121,7 +121,7 @@ class Slider {
             that.pressSlide(e);
             if (that.statusSlider === 1) {
                 clearInterval(that.timer);
-                that.timer = setInterval(function(){that.btnRight()},5000);
+                that.timer = setInterval(function(){that.btnRight();},5000);
             }
         });
     }

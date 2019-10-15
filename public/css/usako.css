@@ -58,11 +58,7 @@ hr {
      color: white;
  }
 
-.dropdown-item:hover {
-    color: rgb(151,194,72);
-}
-
-.dropdown-item:focus {
+.dropdown-item:hover, .dropdown-item:focus {
     color: rgb(151,194,72);
 }
 
@@ -199,14 +195,22 @@ hr {
     justify-content: center;
 }
 
-.page-link, .page-item.disabled .page-link, .page-link:hover {
+.page-link, .page-item.disabled .page-link, .page-link:hover, .page-link:focus, .page-item.active {
     background-color: #282a2e;
     border: none;
 }
 
 .page-item.active .page-link {
-    border: 1px solid rgba(0,0,0,.3);
     background-color: rgba(255,255,255,0);
+}
+
+.page-link {
+    color: white;
+}
+
+.page-link:hover, .page-link:focus, .page-item.active .page-link{
+    color: rgb(151,194,72);
+    box-shadow: none;
 }
 
 /* Admin Page */
