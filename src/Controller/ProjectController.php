@@ -20,7 +20,12 @@ use Symfony\Component\Routing\Annotation\Route;
  */
 class ProjectController extends AbstractController
 {
+
     /**
+     * @param PaginatorInterface $paginator
+     * @param ProjectRepository $repository
+     * @param Request $request
+     * @return Response
      * @Route("/projects", name="projects")
      */
     public function project(PaginatorInterface $paginator, ProjectRepository $repository, Request $request)
@@ -34,7 +39,10 @@ class ProjectController extends AbstractController
         ]);
     }
 
+
     /**
+     * @param Project $projects
+     * @return Response
      * @Route("/project/{id}", name="project")
      */
     public function projectShow(Project $projects)

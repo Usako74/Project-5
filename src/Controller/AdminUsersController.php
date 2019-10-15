@@ -22,7 +22,13 @@ use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 class AdminUsersController extends AbstractController
 {
 
+
     /**
+     * @param UsersRepository $repository
+     * @param PaginatorInterface $paginator
+     * @param Request $request
+     * @param Users|null $users
+     * @return \Symfony\Component\HttpFoundation\Response
      * @Route("/admin-users-list", name="admin-users-list")
      */
     public function AdminUsersList(UsersRepository $repository, PaginatorInterface $paginator, Request $request, Users $users = null)
@@ -40,7 +46,13 @@ class AdminUsersController extends AbstractController
 
     }
 
+
     /**
+     * @param Users|null $users
+     * @param Request $request
+     * @param ObjectManager $manager
+     * @param UserPasswordEncoderInterface $encoder
+     * @return \Symfony\Component\HttpFoundation\Response
      * @Route("/admin-users-list/{id}/edit", name="admin-users-list-edit")
      */
     public function AdminUsersListEdit(Users $users = null, Request $request, ObjectManager $manager, UserPasswordEncoderInterface $encoder)
@@ -72,7 +84,12 @@ class AdminUsersController extends AbstractController
         ]);
     }
 
+
     /**
+     * @param Users $users
+     * @param PostLikeRepository $likeRepository
+     * @param ObjectManager $manager
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse
      * @Route("admin-user-list/{id}/delete", name="admin-user-delete")
      */
     public function adminDeleteUser(Users $users, PostLikeRepository $likeRepository, ObjectManager $manager)

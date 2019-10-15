@@ -19,7 +19,13 @@ use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
  */
 class UserController extends AbstractController
 {
+
     /**
+     * @param Request $request
+     * @param ObjectManager $manager
+     * @param UserPasswordEncoderInterface $encoder
+     * @return Response
+     * @throws \Exception
      * @Route("/registration", name="registration")
      */
     public function registration(Request $request, ObjectManager $manager, UserPasswordEncoderInterface $encoder): Response
@@ -46,7 +52,10 @@ class UserController extends AbstractController
         ]);
     }
 
+
     /**
+     * @param AuthenticationUtils $authenticationUtils
+     * @return Response
      * @Route("/login", name="login")
      */
     public function login(AuthenticationUtils $authenticationUtils): Response

@@ -14,7 +14,11 @@ use Symfony\Component\Routing\Annotation\Route;
  */
 class ContactController extends AbstractController
 {
+
     /**
+     * @param Request $request
+     * @param \Swift_Mailer $mailer
+     * @return \Symfony\Component\HttpFoundation\Response
      * @Route("/contact", name="contact")
      */
     public function contact(Request $request, \Swift_Mailer $mailer)
@@ -48,6 +52,7 @@ class ContactController extends AbstractController
 
 
     /**
+     * @return \Symfony\Component\HttpFoundation\Response
      * @Route("/contact", name="send")
      */
     public function sendMessage()

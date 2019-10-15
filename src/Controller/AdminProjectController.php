@@ -19,7 +19,12 @@ use Symfony\Component\Routing\Annotation\Route;
  */
 class AdminProjectController extends AbstractController
 {
+
     /**
+     * @param ProjectRepository $repository
+     * @param PaginatorInterface $paginator
+     * @param Request $request
+     * @return \Symfony\Component\HttpFoundation\Response
      * @Route("/admin-project-list", name="admin-project-list")
      */
     public function adminListProjects(ProjectRepository $repository, PaginatorInterface $paginator, Request $request)
@@ -32,7 +37,13 @@ class AdminProjectController extends AbstractController
         ]);
     }
 
+
     /**
+     * @param Project|null $project
+     * @param Request $request
+     * @param ObjectManager $manager
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
+     * @throws \Exception
      * @Route("/admin-project", name="admin-project")
      * @Route("/admin-project/{id}/edit", name="admin-project-edit")
      */
@@ -81,7 +92,12 @@ class AdminProjectController extends AbstractController
         return md5(uniqid());
     }
 
+
     /**
+     * @param Project $projects
+     * @param PostLikeRepository $likeRepository
+     * @param ObjectManager $manager
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse
      * @Route("admin-project-list/{id}/delete", name="admin-project-delete")
      */
     public function adminDeleteProject(Project $projects, PostLikeRepository $likeRepository, ObjectManager $manager)

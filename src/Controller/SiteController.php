@@ -12,7 +12,9 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
  */
 class SiteController extends AbstractController
 {
+
     /**
+     * @return \Symfony\Component\HttpFoundation\Response
      * @Route("/", name="index")
      */
     public function index()
