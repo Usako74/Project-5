@@ -2,10 +2,8 @@
 
 namespace App\Controller;
 
-use App\Entity\Project;
 use App\Form\AdminUsersType;
 use App\Repository\PostLikeRepository;
-use App\Repository\ProjectRepository;
 use Doctrine\Common\Persistence\ObjectManager;
 use Knp\Component\Pager\PaginatorInterface;
 use App\Entity\Users;
@@ -21,8 +19,6 @@ use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
  */
 class AdminUsersController extends AbstractController
 {
-
-
     /**
      * @param UsersRepository $repository
      * @param PaginatorInterface $paginator
@@ -31,10 +27,7 @@ class AdminUsersController extends AbstractController
      * @return \Symfony\Component\HttpFoundation\Response
      * @Route("/admin-users-list", name="admin-users-list")
      */
-    public function AdminUsersList(UsersRepository $repository, PaginatorInterface $paginator, Request $request, Users $users = null)
-    {
-
-
+    public function AdminUsersList(UsersRepository $repository, PaginatorInterface $paginator, Request $request, Users $users = null) {
         $usersPages = $paginator->paginate($repository->findAll(),
             $request->query->getInt('page', 1),
             10);
@@ -46,7 +39,6 @@ class AdminUsersController extends AbstractController
 
     }
 
-
     /**
      * @param Users|null $users
      * @param Request $request
@@ -55,8 +47,7 @@ class AdminUsersController extends AbstractController
      * @return \Symfony\Component\HttpFoundation\Response
      * @Route("/admin-users-list/{id}/edit", name="admin-users-list-edit")
      */
-    public function AdminUsersListEdit(Users $users = null, Request $request, ObjectManager $manager, UserPasswordEncoderInterface $encoder)
-    {
+    public function AdminUsersListEdit(Users $users = null, Request $request, ObjectManager $manager, UserPasswordEncoderInterface $encoder) {
         if (!$users) {
             $users = new Users();
         }
@@ -66,7 +57,6 @@ class AdminUsersController extends AbstractController
         if ($formEdit->isSubmitted() && $formEdit->isValid()) {
             if ($formEdit->get('password') == null) {
                 $users->setPassword($users->getPassword());
-                dump($users);
             } else {
                 $hash = $encoder->encodePassword($users, $users->getPassword());
                 $users->setPassword($hash);
@@ -84,7 +74,6 @@ class AdminUsersController extends AbstractController
         ]);
     }
 
-
     /**
      * @param Users $users
      * @param PostLikeRepository $likeRepository
@@ -92,8 +81,7 @@ class AdminUsersController extends AbstractController
      * @return \Symfony\Component\HttpFoundation\RedirectResponse
      * @Route("admin-user-list/{id}/delete", name="admin-user-delete")
      */
-    public function adminDeleteUser(Users $users, PostLikeRepository $likeRepository, ObjectManager $manager)
-    {
+    public function adminDeleteUser(Users $users, PostLikeRepository $likeRepository, ObjectManager $manager) {
         $like = $likeRepository->findBy([
             'user' => $users
         ]);
