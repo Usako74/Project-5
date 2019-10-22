@@ -27,8 +27,7 @@ class AdminProjectController extends AbstractController
      * @return \Symfony\Component\HttpFoundation\Response
      * @Route("/admin-project-list", name="admin-project-list")
      */
-    public function adminListProjects(ProjectRepository $repository, PaginatorInterface $paginator, Request $request)
-    {
+    public function adminListProjects(ProjectRepository $repository, PaginatorInterface $paginator, Request $request) {
         $projects = $paginator->paginate($repository->findAll(),
             $request->query->getInt('page', 1),
             4);
@@ -47,18 +46,15 @@ class AdminProjectController extends AbstractController
      * @Route("/admin-project", name="admin-project")
      * @Route("/admin-project/{id}/edit", name="admin-project-edit")
      */
-    public function adminCreateProject(Project $project = null, Request $request, ObjectManager $manager)
-    {
+    public function adminCreateProject(Project $project = null, Request $request, ObjectManager $manager) {
         if (!$project) {
             $project = new Project();
         }
         $form = $this->createForm(AdminProjectType::class, $project);
         $form-> handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid())
-        {
+        if ($form->isSubmitted() && $form->isValid()) {
             $file = $form->get('image')->getData();
-
             $fileName = $this->generateUniqueFileName().'.'.$file->guessExtension();
 
             try {
@@ -71,7 +67,6 @@ class AdminProjectController extends AbstractController
             }
 
             $project->setImage($fileName);
-
             $manager->persist($project);
             $manager->flush();
 
@@ -87,8 +82,7 @@ class AdminProjectController extends AbstractController
     /**
      * @return string
      */
-    private function generateUniqueFileName()
-    {
+    private function generateUniqueFileName() {
         return md5(uniqid());
     }
 
@@ -100,8 +94,7 @@ class AdminProjectController extends AbstractController
      * @return \Symfony\Component\HttpFoundation\RedirectResponse
      * @Route("admin-project-list/{id}/delete", name="admin-project-delete")
      */
-    public function adminDeleteProject(Project $projects, PostLikeRepository $likeRepository, ObjectManager $manager)
-    {
+    public function adminDeleteProject(Project $projects, PostLikeRepository $likeRepository, ObjectManager $manager) {
         $user = $this->getUser();
         if ($projects->isLikedByUser($user)) {
             $like = $likeRepository->findOneBy([
