@@ -4,7 +4,6 @@ namespace App\Controller;
 
 use App\Entity\PostLike;
 use App\Entity\Project;
-use App\Entity\Users;
 use App\Repository\PostLikeRepository;
 use App\Repository\ProjectRepository;
 use Doctrine\Common\Persistence\ObjectManager;
@@ -20,7 +19,6 @@ use Symfony\Component\Routing\Annotation\Route;
  */
 class ProjectController extends AbstractController
 {
-
     /**
      * @param PaginatorInterface $paginator
      * @param ProjectRepository $repository
@@ -28,8 +26,7 @@ class ProjectController extends AbstractController
      * @return Response
      * @Route("/projects", name="projects")
      */
-    public function project(PaginatorInterface $paginator, ProjectRepository $repository, Request $request)
-    {
+    public function project(PaginatorInterface $paginator, ProjectRepository $repository, Request $request) {
         $projects = $paginator->paginate($repository->findBy(['status' => '1']),
             $request->query->getInt('page', 1),
             4);
@@ -39,19 +36,16 @@ class ProjectController extends AbstractController
         ]);
     }
 
-
     /**
      * @param Project $projects
      * @return Response
      * @Route("/project/{id}", name="project")
      */
-    public function projectShow(Project $projects)
-    {
+    public function projectShow(Project $projects) {
         return $this->render('project/project-show.html.twig', [
             'project' => $projects
         ]);
     }
-
 
     /**
      * @Route("/project/{id}/like", name="postlike")
